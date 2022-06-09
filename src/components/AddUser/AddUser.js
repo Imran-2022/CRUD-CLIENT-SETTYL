@@ -10,7 +10,7 @@ const AddUser = () => {
         console.log(name, email)
         const newData = { name, email };
         
-        fetch("http://localhost:8080/users",{
+        fetch("https://secure-ravine-33086.herokuapp.com/users",{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(newData),
@@ -18,7 +18,7 @@ const AddUser = () => {
         .then(res=>res.json())
         .then(data =>{
             if (data.insertedId) {
-                // alert("user added successfully !!")
+                alert("user added successfully !!")
                 e.target.reset();
             }
         })
@@ -39,7 +39,7 @@ const AddUser = () => {
 
             <form onSubmit={handleSubmit}>
                 <input type="text" ref={nameRaf} placeholder="name" />
-                <input type="text" ref={emailRaf} placeholder="email" />
+                <input type="email" ref={emailRaf} placeholder="email" />
                 <input type="submit" value="submit btn" />
             </form>
         </div>

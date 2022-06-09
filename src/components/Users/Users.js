@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Users = () => {
     const [user,setUser]=useState([])
     useEffect(()=>{
-        const url="http://localhost:8080/users"
+        const url="https://secure-ravine-33086.herokuapp.com/users"
         fetch(url)
         .then(res=>res.json())
         .then(data=>{
@@ -18,7 +18,7 @@ const Users = () => {
         // const proced= window.confirm("are you sure, you want to delete ?");
 
         if(true){
-            fetch(`http://localhost:8080/users/${id}`, {
+            fetch(`https://secure-ravine-33086.herokuapp.com/users/${id}`, {
                 method: 'DELETE',
               })
               .then(res => res.json())// or res.text()) 
@@ -43,7 +43,7 @@ const Users = () => {
                             <p>{i+1}. {user.name} {user.email} <Link to={`/users/update/${user._id}`}><button>update</button></Link> <button onClick={()=>handleDelete(user._id)}>delete</button></p>
                         </div>
                     )
-                }).reverse()
+                })
             }
         </div>
     );

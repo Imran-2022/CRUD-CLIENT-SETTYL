@@ -38,7 +38,7 @@ const UpdateUser = () => {
 
 
     const handleUpdate = (e) => {
-        const url = `http://localhost:8080/users/${id}`;
+        const url = `https://secure-ravine-33086.herokuapp.com/users/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
